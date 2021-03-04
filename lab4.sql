@@ -32,7 +32,24 @@ WHERE e.department_id = d.department_id
 AND d.location_id = l.location_id
 AND e.commission_pct is not null;
 
+/*4번*/
+
+SELECT e.last_name, d.department_name
+FROM employees e, departments d
+WHERE e.last_name LIKE '%a%';
+
+/*5번*/
 
 
+
+/*6번*/
+
+
+
+/*7번*/
+
+
+
+/*8번*/
 
 
