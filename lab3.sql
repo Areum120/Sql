@@ -21,6 +21,17 @@ OR INITCAP(last_name) LIKE 'A%'
 OR INITCAP(last_name) LIKE 'M%'
 ORDER BY last_name ASC;
 
+
+/*6번*/
+SELECT * FROM employees;
+
+SELECT last_name, ROUND(MONTHS_BETWEEN(SYSDATE, hire_date)) as MONTHS_WORKED
+FROM employees
+ORDER BY MONTHS_WORKED DESC;
+
+SELECT * FROM departments;
+
+
 /*작은 따옴표 x*/
 
 /*7번*/
@@ -47,6 +58,18 @@ FROM employees
 WHERE commission_pct IS NULL;
 
 /*데이터 타입을 맞춰줘야 함 WHERE로 조건 설정*/
+
+/*12번*/
+/*RPAD(데이터, 고정길이, 문자) 예를 들어 RPAD('A',4,'B')이면 ABBB로 나옴 */
+
+SELECT salary, last_name||' '|| RPAD(' ',SALARY/1000+1, '*') AS EMPLOYEE_AND_THEIR_SALARIES
+FROM employees
+ORDER BY EMPLOYEE_AND_THEIR_SALARIES DESC;
+
+
+
+
+SELECT * FROM employees;
 
 /*13번*/
 
