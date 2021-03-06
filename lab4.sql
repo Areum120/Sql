@@ -40,14 +40,29 @@ WHERE e.last_name LIKE '%a%';
 
 /*5번*/
 
+SELECT e.last_name, e.job_id, d.department_name, l.city
+FROM employees e, departments d, locations l
+WHERE e.department_id = d.department_id
+AND l.CITY LIKE 'Toronto';
 
+/*6번 자체 조인(self join) 문제*/
 
-/*6번*/
-
+SELECT worker.last_name as "Employee", worker.employee_id as "Emp#", manager.last_name as "manager", manager.employee_id as "Mgr#"
+FROM employees worker, employees manager
+WHERE worker.manager_id=manager.employee_id;
 
 
 /*7번*/
 
+SELECT worker.last_name as "Employee", worker.employee_id as "Emp#", manager.last_name as "manager", manager.employee_id as "Mgr#"
+FROM employees worker, employees manager
+WHERE worker.manager_id=manager.employee_id
+OR worker.last_name LIKE 'King'
+OR worker.manager_id is NULL;
+
+SELECT worker.last_name as "Employee", worker.employee_id as "Emp#", manager.last_name as "manager", manager.employee_id as "Mgr#"
+FROM employees worker, employees manager
+WHERE worker.manager_id is NULL;
 
 
 /*8번*/
