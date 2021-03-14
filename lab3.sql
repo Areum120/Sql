@@ -68,7 +68,6 @@ ORDER BY EMPLOYEE_AND_THEIR_SALARIES DESC;
 
 
 
-
 SELECT * FROM employees;
 
 /*13¹ø*/
